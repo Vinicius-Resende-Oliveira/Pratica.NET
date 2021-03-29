@@ -37,7 +37,6 @@ namespace DIO.Bank
                 opcaoUsuario = ObterOpcaoUsuario();
             }
             Console.WriteLine("Obrigado por utilizar nossos serviços.");
-            Console.ReadLine();
         }
 
         private static void Depositar()
@@ -103,6 +102,7 @@ namespace DIO.Bank
 
             Console.WriteLine("Digite o Nome do Cliente: ");
             string entradaNome = Console.ReadLine();
+            stringNullorempty(entradaNome);
 
             Console.WriteLine("Digite o saldo inicial: ");
             double entradaSaldo = doubleTryParce();
@@ -120,7 +120,7 @@ namespace DIO.Bank
             Console.WriteLine();
             Console.WriteLine("DIO Bank a seu dispor!!!");
             Console.WriteLine("Informe a opção desejada:");
-            
+
             Console.WriteLine("1- Listar contas");
             Console.WriteLine("2- Inserir nova conta");
             Console.WriteLine("3- Transferir");
@@ -130,8 +130,19 @@ namespace DIO.Bank
             Console.WriteLine("X- Sair");
             Console.WriteLine();
             string opcaoUsuario = Console.ReadLine().ToUpper();
+            stringNullorempty(opcaoUsuario);
             Console.WriteLine();
             return opcaoUsuario;
+        }
+
+        private static void stringNullorempty(string conferir)
+        {
+            if (!string.IsNullOrEmpty(conferir))
+            {
+                Console.WriteLine("Não deixe o campo vazio.");
+                Console.WriteLine("A operação será cancelada.");
+                throw new ArgumentOutOfRangeException();
+            }
         }
 
         private static double doubleTryParce()
@@ -157,6 +168,7 @@ namespace DIO.Bank
 
             return valorInt;
         }
+        
 
     }
 }
