@@ -137,7 +137,7 @@ namespace DIO.Bank
 
         private static void stringNullorempty(string conferir)
         {
-            if (!string.IsNullOrEmpty(conferir))
+            if (string.IsNullOrEmpty(conferir))
             {
                 Console.WriteLine("Não deixe o campo vazio.");
                 Console.WriteLine("A operação será cancelada.");
