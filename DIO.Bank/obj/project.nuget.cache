@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yX9udyGpiKVfq2RcvqvPlwXnUWWYB+tYdiX/qDZ2/5Xu1+xzrKkOybN+snBpeRwqVElKQw+qkmLJl3GJot2nxw==",
+  "dgSpecHash": "B1k4bzzeBAnzfrthXFNELHiTgMF87j+k/6jhb/F50i4QK/K7yGyq9vcY1RjGXviI0fkpj7Pr+vsXK8JHR+M7xA==",
   "success": true,
-  "projectFilePath": "G:\\C#\\Estudos\\NETCORE\\PraticaDIO.NET\\DIO.Bank\\DIO.Bank.csproj",
+  "projectFilePath": "G:\\C#\\Estudos\\NETCORE\\Projetos.NET\\DIO.Bank\\DIO.Bank.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

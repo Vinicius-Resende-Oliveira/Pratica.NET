@@ -4,9 +4,10 @@ namespace DIO.Bank
 {
     class Program
     {
-        static List<Conta> listaContas = new List<Conta>();
+        static Dados dados = new Dados(); 
         static void Main(string[] args)
         {
+            
             string opcaoUsuario = ObterOpcaoUsuario();
             
             while(opcaoUsuario.ToUpper() != "X"){
@@ -47,7 +48,7 @@ namespace DIO.Bank
             Console.WriteLine("Digite o valor para o deposito: " );
             double valorDeposito = doubleTryParce();
 
-            listaContas[indiceConta].Depositar(valorDeposito);
+            // listaContas[indiceConta].Depositar(valorDeposito);
         
         }
 
@@ -59,7 +60,7 @@ namespace DIO.Bank
             Console.WriteLine("Digite o valor para o saque: " );
             double valorSaque = doubleTryParce();
 
-            listaContas[indiceConta].Sacar(valorSaque);
+            // listaContas[indiceConta].Sacar(valorSaque);
 
         }
 
@@ -74,19 +75,21 @@ namespace DIO.Bank
             Console.WriteLine("Digite o valor a ser transferido");
             double valorTransferencia = doubleTryParce();
 
-            listaContas[indiceContaOrigem].Transferir(valorTransferencia, listaContas[indiceContaDestino]);
+            // listaContas[indiceContaOrigem].Transferir(valorTransferencia, listaContas[indiceContaDestino]);
         }
 
         
 
         private static void ListarConta(){
             Console.WriteLine("Listar contas");
-            if(listaContas.Count == 0){
+            dados.listarContas();
+            if(dados.contas.Count == 0){
                 Console.WriteLine("Nunhum conta cadastrada");
                 return;
             }
-            for (int i = 0; i < listaContas.Count; i++){
-                Conta conta = listaContas[i];
+            for (int i = 0; i < dados.contas.Count; i++){
+                
+                Conta conta = dados.contas[i];
                 Console.Write("#{0} - ", i);
                 Console.WriteLine(conta);
             }
@@ -111,7 +114,8 @@ namespace DIO.Bank
             double entradaCredito = doubleTryParce();
 
             Conta novaConta = new Conta(tipoConta: (TipoConta)entradaTipoConta, saldo: entradaSaldo, credito: entradaCredito, nome: entradaNome);
-            listaContas.Add(novaConta);
+            dados.AdicionarConta(novaConta.ToString());
+            // listaContas.Add(novaConta);
 
         }
 

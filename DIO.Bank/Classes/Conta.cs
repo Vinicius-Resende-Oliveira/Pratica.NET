@@ -19,11 +19,11 @@ namespace DIO.Bank
         }
         public bool Sacar(double valorSaque){
             if(this.Saldo - valorSaque < (this.Credito * -1)){
-                Console.WriteLine("Saldo I1nsuficiente!");
+                Console.WriteLine("Saldo Insuficiente!");
                 return false;
             }
             this.Saldo -= valorSaque;
-            Console.WriteLine("saldo atual da conta de {0} é {1}", this.Nome, this.Saldo);
+            Console.WriteLine("Saldo atual da conta de {0} é {1}", this.Nome, this.Saldo);
             return true;
         }
         public void Depositar(double valorDeposito){
@@ -39,10 +39,10 @@ namespace DIO.Bank
         }
         public override string ToString(){
             string retorno = "";
-            retorno += "TipoConta: " + this.TipoConta + " | ";
-            retorno += "Nome: " + this.Nome + " | ";
-            retorno += "Saldo: " + this.Saldo + " | ";
-            retorno += "Credito: " + this.Credito + " | ";
+            retorno += (this.TipoConta.ToString() == "PessoaFisica")? "1," : "2,";
+            retorno += this.Nome + ",";
+            retorno += this.Saldo + ",";
+            retorno += this.Credito;
             return retorno;
         }
     }
