@@ -1,0 +1,16 @@
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\bin\Debug\net5.0\DIO.Bank.exe
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\bin\Debug\net5.0\DIO.Bank.deps.json
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\bin\Debug\net5.0\DIO.Bank.runtimeconfig.json
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\bin\Debug\net5.0\DIO.Bank.runtimeconfig.dev.json
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\bin\Debug\net5.0\DIO.Bank.dll
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\bin\Debug\net5.0\ref\DIO.Bank.dll
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\bin\Debug\net5.0\DIO.Bank.pdb
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.csprojAssemblyReference.cache
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.GeneratedMSBuildEditorConfig.editorconfig
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.AssemblyInfoInputs.cache
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.AssemblyInfo.cs
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.csproj.CoreCompileInputs.cache
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.dll
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\ref\DIO.Bank.dll
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.pdb
+G:\C#\Estudos\NETCORE\PraticaDIO.NET\DIO.Bank\obj\Debug\net5.0\DIO.Bank.genruntimeconfig.cache
