@@ -43,21 +43,22 @@ namespace DIO.Bank
         private static void Depositar()
         {
             Console.WriteLine("Digite o número da conta: ");
-            int indiceConta = int.Parse(Console.ReadLine());
+            int indiceConta = intTryParce();
 
             Console.WriteLine("Digite o valor para o deposito: " );
-            double valorDeposito = double.Parse(Console.ReadLine());
+            double valorDeposito = doubleTryParce();
 
             listaContas[indiceConta].Depositar(valorDeposito);
+        
         }
 
         private static void Sacar()
         {
             Console.WriteLine("Digite o número da conta: ");
-            int indiceConta = int.Parse(Console.ReadLine());
+            int indiceConta = intTryParce();
 
             Console.WriteLine("Digite o valor para o saque: " );
-            double valorSaque = double.Parse(Console.ReadLine());
+            double valorSaque = doubleTryParce();
 
             listaContas[indiceConta].Sacar(valorSaque);
 
@@ -66,16 +67,18 @@ namespace DIO.Bank
         private static void Transferir()
         {
             Console.WriteLine("Digite o número da conta de origem: ");
-            int indiceContaOrigem = int.Parse(Console.ReadLine());
+            int indiceContaOrigem = intTryParce();
 
             Console.WriteLine("Digite o número da conta de destino");
-            int indiceContaDestino = int.Parse(Console.ReadLine());
+            int indiceContaDestino = intTryParce();
 
             Console.WriteLine("Digite o valor a ser transferido");
-            double valorTransferencia = double.Parse(Console.ReadLine());
+            double valorTransferencia = doubleTryParce();
 
             listaContas[indiceContaOrigem].Transferir(valorTransferencia, listaContas[indiceContaDestino]);
         }
+
+        
 
         private static void ListarConta(){
             Console.WriteLine("Listar contas");
@@ -96,16 +99,16 @@ namespace DIO.Bank
             Console.WriteLine("Inserir nova conta");
 
             Console.WriteLine("Digite 1 pra Conta Fisica ou 2 para Juridica: ");
-            int entradaTipoConta = int.Parse(Console.ReadLine());
+            int entradaTipoConta = intTryParce();
 
             Console.WriteLine("Digite o Nome do Cliente: ");
             string entradaNome = Console.ReadLine();
 
             Console.WriteLine("Digite o saldo inicial: ");
-            double entradaSaldo = double.Parse(Console.ReadLine());
+            double entradaSaldo = doubleTryParce();
 
             Console.WriteLine("Digite o credito: ");
-            double entradaCredito = double.Parse(Console.ReadLine());
+            double entradaCredito = doubleTryParce();
 
             Conta novaConta = new Conta(tipoConta: (TipoConta)entradaTipoConta, saldo: entradaSaldo, credito: entradaCredito, nome: entradaNome);
             listaContas.Add(novaConta);
@@ -130,5 +133,30 @@ namespace DIO.Bank
             Console.WriteLine();
             return opcaoUsuario;
         }
+
+        private static double doubleTryParce()
+        {
+            if (!double.TryParse(Console.ReadLine(), out double valorDouble))
+            {
+                Console.WriteLine("Digite apenas valores com inteiros ou com casas decimais.");
+                Console.WriteLine("A operação será cancelada.");
+                throw new ArgumentOutOfRangeException();
+            }
+
+            return valorDouble;
+        }
+
+        private static int intTryParce()
+        {
+            if (!int.TryParse(Console.ReadLine(), out int valorInt))
+            {
+                Console.WriteLine("Digite apenas valores com inteiros.");
+                Console.WriteLine("A operação será cancelada.");
+                throw new ArgumentOutOfRangeException();
+            }
+
+            return valorInt;
+        }
+
     }
 }
