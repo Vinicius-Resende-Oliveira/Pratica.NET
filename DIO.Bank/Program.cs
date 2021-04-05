@@ -9,7 +9,7 @@ namespace DIO.Bank
         {
             
             string opcaoUsuario = ObterOpcaoUsuario();
-            
+            dados.listarContas();
             while(opcaoUsuario.ToUpper() != "X"){
                 switch (opcaoUsuario)
                 {
@@ -47,8 +47,10 @@ namespace DIO.Bank
 
             Console.WriteLine("Digite o valor para o deposito: " );
             double valorDeposito = doubleTryParce();
-
-            // listaContas[indiceConta].Depositar(valorDeposito);
+            string beforeConta = dados.contas[indiceConta].ToString();
+            dados.contas[indiceConta].Depositar(valorDeposito);
+            string afterConta = dados.contas[indiceConta].ToString();
+            dados.alterarLinhas(beforeConta, afterConta);
         
         }
 
@@ -60,7 +62,10 @@ namespace DIO.Bank
             Console.WriteLine("Digite o valor para o saque: " );
             double valorSaque = doubleTryParce();
 
-            // listaContas[indiceConta].Sacar(valorSaque);
+            string beforeConta = dados.contas[indiceConta].ToString();
+            dados.contas[indiceConta].Sacar(valorSaque);
+            string afterConta = dados.contas[indiceConta].ToString();
+            dados.alterarLinhas(beforeConta, afterConta);
 
         }
 
@@ -75,7 +80,14 @@ namespace DIO.Bank
             Console.WriteLine("Digite o valor a ser transferido");
             double valorTransferencia = doubleTryParce();
 
-            // listaContas[indiceContaOrigem].Transferir(valorTransferencia, listaContas[indiceContaDestino]);
+            string beforeContaOrigem = dados.contas[indiceContaOrigem].ToString();
+            string beforeContaDestino = dados.contas[indiceContaDestino].ToString();
+            dados.contas[indiceContaOrigem].Transferir(valorTransferencia, dados.contas[indiceContaDestino]);
+            string afterContaOrigem = dados.contas[indiceContaOrigem].ToString();
+            string afterContaDestino = dados.contas[indiceContaDestino].ToString();
+            dados.alterarLinhas(beforeContaOrigem, afterContaOrigem);
+            dados.alterarLinhas(beforeContaDestino, afterContaDestino);
+            
         }
 
         

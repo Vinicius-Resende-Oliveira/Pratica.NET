@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections;
 namespace DIO.Bank
 {
     public class Dados
@@ -18,24 +19,38 @@ namespace DIO.Bank
             {
                 write.WriteLine(conta);
             }
-            contas.RemoveRange(0, contas.Count);
-            adicionarLista(conta);
+            listarContas();
         }
-        
-        public void alterarContas(){
-            using(StreamReader alterar = new StreamReader(@caminho, true)){
-                var arquivo = ConfigurationSettings.AppSettings["Caminho"].ToString();
+        public void alterarLinhas(string beforeConta, string afterConta){
+            ArrayList linhas = new ArrayList();
+            string linha;
+            using( StreamReader read = new StreamReader(@caminho)){
+                while ((linha = read.ReadLine()) != null)
+                {
+                    if(String.Compare(linha, beforeConta) == 0){
+                        linhas.Add(afterConta);
+                    }else{
+                        linhas.Add(linha);
+                    }
+                }
+            }
+            using( StreamWriter write = new StreamWriter(caminho)){
+                foreach(string strNovaLinha in linhas){
+                    write.WriteLine(strNovaLinha);
+                }
             }
             
-
+            
+            listarContas();
         }
         public void listarContas(){
+            contas.RemoveRange(0, contas.Count);
             try
             {
-                using (StreamReader ler = new StreamReader(caminho))
+                using (StreamReader read = new StreamReader(caminho))
                 {
                     String linha;
-                    while ((linha = ler.ReadLine()) != null)
+                    while ((linha = read.ReadLine()) != null)
                     {
                         adicionarLista(linha);
                     }

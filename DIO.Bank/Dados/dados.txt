@@ -1,3 +1,2 @@
-1,Vinicius,100,1
-2,Joaquim,1000,0
-1,bwqeilfbqw,1001,1
+1,Vinicius,1000,50
+2,Joaquim,750,0
